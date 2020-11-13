@@ -7,6 +7,13 @@ Simple python interface for moving stepper motors through Arduinos and step+dir 
 3. `make` to make the firmware
 4. `make flash` to flash the firmware
 
+## How to Use
+```
+import simple_xyz
+device = simple_xyz.XYZ()
+device.step(x=100)
+```
+
 ## Requirements
 - avrdude
 - avr-gcc

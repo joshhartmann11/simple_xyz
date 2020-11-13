@@ -5,26 +5,10 @@
 #include <util/delay_basic.h>
 #include <avr/io.h>
 
+#include "configuration.h"
 
-// User defined
-
-// Include your board header file defined in "boards" or create your own
-#include "boards/arduino_nano.h"
-
-// Define step and direction pins
-#define STEP_X_PIN 2
-#define DIR_X_PIN 3
-
-#define STEP_Y_PIN 4
-#define DIR_Y_PIN 5
-
-#define STEP_Z_PIN 6
-#define DIR_Z_PIN 7
-
-// Define communication baudrate, MUST BE THE SAME AS IN "simple_xyz.py"
+// Communication baudrate, MUST BE THE SAME AS IN "simple_xyz.py"
 #define BAUD_RATE 250000
-
-
 
 #define clear_bit(port, bit) (*port) &= ~(1 << (bit))
 #define set_bit(port, bit) (*port) |= (1 << (bit))

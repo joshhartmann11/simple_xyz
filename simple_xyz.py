@@ -8,6 +8,7 @@ class XYZ:
     BAUD_RATE = 250000
 
     def __init__(self, port=None):
+        self.serial_connection = None
         self.setup(port) if port else self.auto_setup()
 
     def setup(self, port):
@@ -20,6 +21,6 @@ class XYZ:
         device_path = devices[0].split(" - ")[0]
         self.setup(device_path)
 
-    def step(self, x:int, y:int, z:int, delay:int=2**14):
+    def step(self, x=0, y=0, z=0, delay=2**14):
         bytes = struct.pack("iiih", x, y, z, delay)
         self.serial_connection.write(bytes)
